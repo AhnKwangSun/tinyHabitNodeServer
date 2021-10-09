@@ -1,0 +1,695 @@
+[2021-03-31 05:01:41.604 KST][172.17.12.94(40902)][condurealdb][condu_real][PostgreSQL JDBC Driver][21063][00000]LOG:  process 21063 still waiting for ShareLock on transaction 260372686 after 1000.056 ms
+[2021-03-31 05:01:41.604 KST][172.17.12.94(40902)][condurealdb][condu_real][PostgreSQL JDBC Driver][21063][00000]DETAIL:  Process holding the lock: 21624. Wait queue: 14718, 21063.
+[2021-03-31 05:01:41.604 KST][172.17.12.94(40902)][condurealdb][condu_real][PostgreSQL JDBC Driver][21063][00000]CONTEXT:  while updating tuple (3624,4) in relation "colabo_user_ledg"
+[2021-03-31 05:01:41.604 KST][172.17.12.94(40902)][condurealdb][condu_real][PostgreSQL JDBC Driver][21063][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U009) */  colabo_user_ledg
+	set stts = $1
+	where ptl_id = $2
+	and chnl_Id = $3
+	and use_intt_id = $4
+	and user_id = $5
+[2021-03-31 05:04:12.961 KST][172.17.12.94(52116)][condurealdb][condu_real][PostgreSQL JDBC Driver][10733][00000]LOG:  process 10733 still waiting for ShareLock on transaction 261555422 after 1000.057 ms
+[2021-03-31 05:04:12.961 KST][172.17.12.94(52116)][condurealdb][condu_real][PostgreSQL JDBC Driver][10733][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733.
+[2021-03-31 05:04:12.961 KST][172.17.12.94(52116)][condurealdb][condu_real][PostgreSQL JDBC Driver][10733][00000]CONTEXT:  while updating tuple (1242,24) in relation "user_prfl"
+[2021-03-31 05:04:12.961 KST][172.17.12.94(52116)][condurealdb][condu_real][PostgreSQL JDBC Driver][10733][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:04:16.034 KST][172.17.12.94(55034)][condurealdb][condu_real][PostgreSQL JDBC Driver][29696][00000]LOG:  process 29696 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.045 ms
+[2021-03-31 05:04:16.034 KST][172.17.12.94(55034)][condurealdb][condu_real][PostgreSQL JDBC Driver][29696][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696.
+[2021-03-31 05:04:16.034 KST][172.17.12.94(55034)][condurealdb][condu_real][PostgreSQL JDBC Driver][29696][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:06:13.462 KST][172.17.12.93(35370)][condurealdb][condu_real][PostgreSQL JDBC Driver][22066][00000]LOG:  process 22066 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.061 ms
+[2021-03-31 05:06:13.462 KST][172.17.12.93(35370)][condurealdb][condu_real][PostgreSQL JDBC Driver][22066][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066.
+[2021-03-31 05:06:13.462 KST][172.17.12.93(35370)][condurealdb][condu_real][PostgreSQL JDBC Driver][22066][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:06:16.535 KST][172.17.12.93(35374)][condurealdb][condu_real][PostgreSQL JDBC Driver][22068][00000]LOG:  process 22068 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.048 ms
+[2021-03-31 05:06:16.535 KST][172.17.12.93(35374)][condurealdb][condu_real][PostgreSQL JDBC Driver][22068][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066, 22068.
+[2021-03-31 05:06:16.535 KST][172.17.12.93(35374)][condurealdb][condu_real][PostgreSQL JDBC Driver][22068][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:11:18.280 KST][172.17.12.94(52108)][condurealdb][condu_real][PostgreSQL JDBC Driver][10729][00000]LOG:  process 10729 still waiting for ShareLock on transaction 261555422 after 1000.066 ms
+[2021-03-31 05:11:18.280 KST][172.17.12.94(52108)][condurealdb][condu_real][PostgreSQL JDBC Driver][10729][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729.
+[2021-03-31 05:11:18.280 KST][172.17.12.94(52108)][condurealdb][condu_real][PostgreSQL JDBC Driver][10729][00000]CONTEXT:  while updating tuple (534,19) in relation "colabo_user_ledg"
+[2021-03-31 05:11:18.280 KST][172.17.12.94(52108)][condurealdb][condu_real][PostgreSQL JDBC Driver][10729][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 05:12:12.056 KST][172.17.12.93(51102)][condurealdb][condu_real][PostgreSQL JDBC Driver][19946][00000]LOG:  process 19946 still waiting for ShareLock on transaction 261555422 after 1000.049 ms
+[2021-03-31 05:12:12.056 KST][172.17.12.93(51102)][condurealdb][condu_real][PostgreSQL JDBC Driver][19946][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946.
+[2021-03-31 05:12:12.056 KST][172.17.12.93(51102)][condurealdb][condu_real][PostgreSQL JDBC Driver][19946][00000]CONTEXT:  while updating tuple (759,18) in relation "user_prfl"
+[2021-03-31 05:12:12.056 KST][172.17.12.93(51102)][condurealdb][condu_real][PostgreSQL JDBC Driver][19946][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:12:19.189 KST][172.17.12.93(34100)][condurealdb][condu_real][PostgreSQL JDBC Driver][18794][00000]LOG:  process 18794 still waiting for ShareLock on transaction 261555422 after 1000.065 ms
+[2021-03-31 05:12:19.189 KST][172.17.12.93(34100)][condurealdb][condu_real][PostgreSQL JDBC Driver][18794][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794.
+[2021-03-31 05:12:19.189 KST][172.17.12.93(34100)][condurealdb][condu_real][PostgreSQL JDBC Driver][18794][00000]CONTEXT:  while updating tuple (408,2) in relation "colabo_user_ledg"
+[2021-03-31 05:12:19.189 KST][172.17.12.93(34100)][condurealdb][condu_real][PostgreSQL JDBC Driver][18794][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 05:13:29.365 KST][172.17.12.94(46714)][condurealdb][condu_real][PostgreSQL JDBC Driver][6231][00000]LOG:  process 6231 still waiting for ExclusiveLock on tuple (759,18) of relation 17243 of database 16389 after 1000.052 ms
+[2021-03-31 05:13:29.365 KST][172.17.12.94(46714)][condurealdb][condu_real][PostgreSQL JDBC Driver][6231][00000]DETAIL:  Process holding the lock: 19946. Wait queue: 6231.
+[2021-03-31 05:13:29.365 KST][172.17.12.94(46714)][condurealdb][condu_real][PostgreSQL JDBC Driver][6231][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+64+0 records in
+64+0 records out
+16777216 bytes (17 MB) copied, 0.0248544 s, 675 MB/s
+[2021-03-31 05:15:29.868 KST][172.17.12.93(53680)][condurealdb][condu_real][PostgreSQL JDBC Driver][29173][00000]LOG:  process 29173 still waiting for ExclusiveLock on tuple (759,18) of relation 17243 of database 16389 after 1000.057 ms
+[2021-03-31 05:15:29.868 KST][172.17.12.93(53680)][condurealdb][condu_real][PostgreSQL JDBC Driver][29173][00000]DETAIL:  Process holding the lock: 19946. Wait queue: 6231, 29173.
+[2021-03-31 05:15:29.868 KST][172.17.12.93(53680)][condurealdb][condu_real][PostgreSQL JDBC Driver][29173][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:17:49.837 KST][172.17.12.93(56162)][condurealdb][condu_real][PostgreSQL JDBC Driver][1108][00000]LOG:  process 1108 still waiting for ShareLock on transaction 261555422 after 1000.045 ms
+[2021-03-31 05:17:49.837 KST][172.17.12.93(56162)][condurealdb][condu_real][PostgreSQL JDBC Driver][1108][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108.
+[2021-03-31 05:17:49.837 KST][172.17.12.93(56162)][condurealdb][condu_real][PostgreSQL JDBC Driver][1108][00000]CONTEXT:  while updating tuple (1245,21) in relation "user_prfl"
+[2021-03-31 05:17:49.837 KST][172.17.12.93(56162)][condurealdb][condu_real][PostgreSQL JDBC Driver][1108][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:19:50.342 KST][172.17.12.94(35540)][condurealdb][condu_real][PostgreSQL JDBC Driver][27385][00000]LOG:  process 27385 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.044 ms
+[2021-03-31 05:19:50.342 KST][172.17.12.94(35540)][condurealdb][condu_real][PostgreSQL JDBC Driver][27385][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385.
+[2021-03-31 05:19:50.342 KST][172.17.12.94(35540)][condurealdb][condu_real][PostgreSQL JDBC Driver][27385][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:21:42.626 KST][172.17.12.94(46686)][condurealdb][condu_real][PostgreSQL JDBC Driver][23308][00000]LOG:  process 23308 still waiting for ShareLock on transaction 261555422 after 1000.046 ms
+[2021-03-31 05:21:42.626 KST][172.17.12.94(46686)][condurealdb][condu_real][PostgreSQL JDBC Driver][23308][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308.
+[2021-03-31 05:21:42.626 KST][172.17.12.94(46686)][condurealdb][condu_real][PostgreSQL JDBC Driver][23308][00000]CONTEXT:  while updating tuple (1119,1) in relation "user_prfl"
+[2021-03-31 05:21:42.626 KST][172.17.12.94(46686)][condurealdb][condu_real][PostgreSQL JDBC Driver][23308][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:22:20.837 KST][172.17.12.94(59626)][condurealdb][condu_real][PostgreSQL JDBC Driver][5954][00000]LOG:  process 5954 still waiting for ExclusiveLock on tuple (1119,1) of relation 17243 of database 16389 after 1000.054 ms
+[2021-03-31 05:22:20.837 KST][172.17.12.94(59626)][condurealdb][condu_real][PostgreSQL JDBC Driver][5954][00000]DETAIL:  Process holding the lock: 23308. Wait queue: 5954.
+[2021-03-31 05:22:20.837 KST][172.17.12.94(59626)][condurealdb][condu_real][PostgreSQL JDBC Driver][5954][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:23:43.125 KST][172.17.12.93(57812)][condurealdb][condu_real][PostgreSQL JDBC Driver][5953][00000]LOG:  process 5953 still waiting for ExclusiveLock on tuple (1119,1) of relation 17243 of database 16389 after 1000.050 ms
+[2021-03-31 05:23:43.125 KST][172.17.12.93(57812)][condurealdb][condu_real][PostgreSQL JDBC Driver][5953][00000]DETAIL:  Process holding the lock: 23308. Wait queue: 5954, 5953.
+[2021-03-31 05:23:43.125 KST][172.17.12.93(57812)][condurealdb][condu_real][PostgreSQL JDBC Driver][5953][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:24:21.334 KST][172.17.12.93(35522)][condurealdb][condu_real][PostgreSQL JDBC Driver][8662][00000]LOG:  process 8662 still waiting for ExclusiveLock on tuple (1119,1) of relation 17243 of database 16389 after 1000.044 ms
+[2021-03-31 05:24:21.334 KST][172.17.12.93(35522)][condurealdb][condu_real][PostgreSQL JDBC Driver][8662][00000]DETAIL:  Process holding the lock: 23308. Wait queue: 5954, 5953, 8662.
+[2021-03-31 05:24:21.334 KST][172.17.12.93(35522)][condurealdb][condu_real][PostgreSQL JDBC Driver][8662][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:25:34.475 KST][172.17.12.94(59484)][condurealdb][condu_real][PostgreSQL JDBC Driver][5870][00000]LOG:  process 5870 still waiting for ShareLock on transaction 261555422 after 1000.048 ms
+[2021-03-31 05:25:34.475 KST][172.17.12.94(59484)][condurealdb][condu_real][PostgreSQL JDBC Driver][5870][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870.
+[2021-03-31 05:25:34.475 KST][172.17.12.94(59484)][condurealdb][condu_real][PostgreSQL JDBC Driver][5870][00000]CONTEXT:  while updating tuple (6010,16) in relation "user_prfl"
+[2021-03-31 05:25:34.475 KST][172.17.12.94(59484)][condurealdb][condu_real][PostgreSQL JDBC Driver][5870][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:25:36.857 KST][172.17.12.94(46700)][condurealdb][condu_real][PostgreSQL JDBC Driver][23313][00000]LOG:  process 23313 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.044 ms
+[2021-03-31 05:25:36.857 KST][172.17.12.94(46700)][condurealdb][condu_real][PostgreSQL JDBC Driver][23313][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313.
+[2021-03-31 05:25:36.857 KST][172.17.12.94(46700)][condurealdb][condu_real][PostgreSQL JDBC Driver][23313][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:25:40.047 KST][172.17.12.94(38242)][condurealdb][condu_real][PostgreSQL JDBC Driver][18594][00000]LOG:  process 18594 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.049 ms
+[2021-03-31 05:25:40.047 KST][172.17.12.94(38242)][condurealdb][condu_real][PostgreSQL JDBC Driver][18594][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594.
+[2021-03-31 05:25:40.047 KST][172.17.12.94(38242)][condurealdb][condu_real][PostgreSQL JDBC Driver][18594][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:25:42.493 KST][172.17.12.94(52110)][condurealdb][condu_real][PostgreSQL JDBC Driver][10730][00000]LOG:  process 10730 still waiting for ShareLock on transaction 261555422 after 1000.054 ms
+[2021-03-31 05:25:42.493 KST][172.17.12.94(52110)][condurealdb][condu_real][PostgreSQL JDBC Driver][10730][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730.
+[2021-03-31 05:25:42.493 KST][172.17.12.94(52110)][condurealdb][condu_real][PostgreSQL JDBC Driver][10730][00000]CONTEXT:  while updating tuple (1233,4) in relation "user_prfl"
+[2021-03-31 05:25:42.493 KST][172.17.12.94(52110)][condurealdb][condu_real][PostgreSQL JDBC Driver][10730][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:25:42.888 KST][172.17.12.94(43378)][condurealdb][condu_real][PostgreSQL JDBC Driver][12920][00000]LOG:  process 12920 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.060 ms
+[2021-03-31 05:25:42.888 KST][172.17.12.94(43378)][condurealdb][condu_real][PostgreSQL JDBC Driver][12920][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594, 12920.
+[2021-03-31 05:25:42.888 KST][172.17.12.94(43378)][condurealdb][condu_real][PostgreSQL JDBC Driver][12920][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:27:34.972 KST][172.17.12.93(38352)][condurealdb][condu_real][PostgreSQL JDBC Driver][18542][00000]LOG:  process 18542 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.049 ms
+[2021-03-31 05:27:34.972 KST][172.17.12.93(38352)][condurealdb][condu_real][PostgreSQL JDBC Driver][18542][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594, 12920, 18542.
+[2021-03-31 05:27:34.972 KST][172.17.12.93(38352)][condurealdb][condu_real][PostgreSQL JDBC Driver][18542][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:27:37.351 KST][172.17.12.93(49634)][condurealdb][condu_real][PostgreSQL JDBC Driver][9073][00000]LOG:  process 9073 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.059 ms
+[2021-03-31 05:27:37.351 KST][172.17.12.93(49634)][condurealdb][condu_real][PostgreSQL JDBC Driver][9073][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594, 12920, 18542, 9073.
+[2021-03-31 05:27:37.351 KST][172.17.12.93(49634)][condurealdb][condu_real][PostgreSQL JDBC Driver][9073][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:27:40.584 KST][172.17.12.93(57878)][condurealdb][condu_real][PostgreSQL JDBC Driver][16929][00000]LOG:  process 16929 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.061 ms
+[2021-03-31 05:27:40.584 KST][172.17.12.93(57878)][condurealdb][condu_real][PostgreSQL JDBC Driver][16929][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594, 12920, 18542, 9073, 16929.
+[2021-03-31 05:27:40.584 KST][172.17.12.93(57878)][condurealdb][condu_real][PostgreSQL JDBC Driver][16929][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:27:43.035 KST][172.17.12.93(57880)][condurealdb][condu_real][PostgreSQL JDBC Driver][17009][00000]LOG:  process 17009 still waiting for ExclusiveLock on tuple (1233,4) of relation 17243 of database 16389 after 1000.059 ms
+[2021-03-31 05:27:43.035 KST][172.17.12.93(57880)][condurealdb][condu_real][PostgreSQL JDBC Driver][17009][00000]DETAIL:  Process holding the lock: 10730. Wait queue: 17009.
+[2021-03-31 05:27:43.035 KST][172.17.12.93(57880)][condurealdb][condu_real][PostgreSQL JDBC Driver][17009][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:27:43.382 KST][172.17.12.93(57884)][condurealdb][condu_real][PostgreSQL JDBC Driver][17027][00000]LOG:  process 17027 still waiting for ExclusiveLock on tuple (6010,16) of relation 17243 of database 16389 after 1000.055 ms
+[2021-03-31 05:27:43.382 KST][172.17.12.93(57884)][condurealdb][condu_real][PostgreSQL JDBC Driver][17027][00000]DETAIL:  Process holding the lock: 5870. Wait queue: 23313, 18594, 12920, 18542, 9073, 16929, 17027.
+[2021-03-31 05:27:43.382 KST][172.17.12.93(57884)][condurealdb][condu_real][PostgreSQL JDBC Driver][17027][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:29:14.823 KST][172.17.12.93(57888)][condurealdb][condu_real][PostgreSQL JDBC Driver][17105][00000]LOG:  process 17105 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.056 ms
+[2021-03-31 05:29:14.823 KST][172.17.12.93(57888)][condurealdb][condu_real][PostgreSQL JDBC Driver][17105][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066, 22068, 17105.
+[2021-03-31 05:29:14.823 KST][172.17.12.93(57888)][condurealdb][condu_real][PostgreSQL JDBC Driver][17105][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:29:21.488 KST][172.17.12.93(57894)][condurealdb][condu_real][PostgreSQL JDBC Driver][20158][00000]LOG:  process 20158 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.057 ms
+[2021-03-31 05:29:21.488 KST][172.17.12.93(57894)][condurealdb][condu_real][PostgreSQL JDBC Driver][20158][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066, 22068, 17105, 20158.
+[2021-03-31 05:29:21.488 KST][172.17.12.93(57894)][condurealdb][condu_real][PostgreSQL JDBC Driver][20158][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:30:13.470 KST][172.17.12.94(59038)][condurealdb][condu_real][PostgreSQL JDBC Driver][22067][00000]LOG:  process 22067 still waiting for ExclusiveLock on tuple (1233,4) of relation 17243 of database 16389 after 1000.055 ms
+[2021-03-31 05:30:13.470 KST][172.17.12.94(59038)][condurealdb][condu_real][PostgreSQL JDBC Driver][22067][00000]DETAIL:  Process holding the lock: 10730. Wait queue: 17009, 22067.
+[2021-03-31 05:30:13.470 KST][172.17.12.94(59038)][condurealdb][condu_real][PostgreSQL JDBC Driver][22067][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:31:15.325 KST][172.17.12.93(57896)][condurealdb][condu_real][PostgreSQL JDBC Driver][20508][00000]LOG:  process 20508 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.058 ms
+[2021-03-31 05:31:15.325 KST][172.17.12.93(57896)][condurealdb][condu_real][PostgreSQL JDBC Driver][20508][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066, 22068, 17105, 20158, 20508.
+[2021-03-31 05:31:15.325 KST][172.17.12.93(57896)][condurealdb][condu_real][PostgreSQL JDBC Driver][20508][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:31:22.032 KST][172.17.12.93(57928)][condurealdb][condu_real][PostgreSQL JDBC Driver][24407][00000]LOG:  process 24407 still waiting for ExclusiveLock on tuple (1242,24) of relation 17243 of database 16389 after 1000.060 ms
+[2021-03-31 05:31:22.032 KST][172.17.12.93(57928)][condurealdb][condu_real][PostgreSQL JDBC Driver][24407][00000]DETAIL:  Process holding the lock: 10733. Wait queue: 29696, 22066, 22068, 17105, 20158, 20508, 24407.
+[2021-03-31 05:31:22.032 KST][172.17.12.93(57928)][condurealdb][condu_real][PostgreSQL JDBC Driver][24407][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:32:13.971 KST][172.17.12.93(57932)][condurealdb][condu_real][PostgreSQL JDBC Driver][24723][00000]LOG:  process 24723 still waiting for ExclusiveLock on tuple (1233,4) of relation 17243 of database 16389 after 1000.075 ms
+[2021-03-31 05:32:13.971 KST][172.17.12.93(57932)][condurealdb][condu_real][PostgreSQL JDBC Driver][24723][00000]DETAIL:  Process holding the lock: 10730. Wait queue: 17009, 22067, 24723.
+[2021-03-31 05:32:13.971 KST][172.17.12.93(57932)][condurealdb][condu_real][PostgreSQL JDBC Driver][24723][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:33:50.557 KST][172.17.12.93(57934)][condurealdb][condu_real][PostgreSQL JDBC Driver][26869][00000]LOG:  process 26869 still waiting for ExclusiveLock on tuple (759,18) of relation 17243 of database 16389 after 1000.066 ms
+[2021-03-31 05:33:50.557 KST][172.17.12.93(57934)][condurealdb][condu_real][PostgreSQL JDBC Driver][26869][00000]DETAIL:  Process holding the lock: 19946. Wait queue: 6231, 29173, 26869.
+[2021-03-31 05:33:50.557 KST][172.17.12.93(57934)][condurealdb][condu_real][PostgreSQL JDBC Driver][26869][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:35:51.065 KST][172.17.12.94(43580)][condurealdb][condu_real][PostgreSQL JDBC Driver][13041][00000]LOG:  process 13041 still waiting for ExclusiveLock on tuple (759,18) of relation 17243 of database 16389 after 1000.308 ms
+[2021-03-31 05:35:51.065 KST][172.17.12.94(43580)][condurealdb][condu_real][PostgreSQL JDBC Driver][13041][00000]DETAIL:  Process holding the lock: 19946. Wait queue: 6231, 29173, 26869, 13041.
+[2021-03-31 05:35:51.065 KST][172.17.12.94(43580)][condurealdb][condu_real][PostgreSQL JDBC Driver][13041][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 05:51:25.853 KST][172.17.12.93(57952)][condurealdb][condu_real][PostgreSQL JDBC Driver][1538][00000]LOG:  process 1538 still waiting for ShareLock on transaction 261555422 after 1000.061 ms
+[2021-03-31 05:51:25.853 KST][172.17.12.93(57952)][condurealdb][condu_real][PostgreSQL JDBC Driver][1538][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538.
+[2021-03-31 05:51:25.853 KST][172.17.12.93(57952)][condurealdb][condu_real][PostgreSQL JDBC Driver][1538][00000]CONTEXT:  while updating tuple (527,17) in relation "colabo_user_ledg"
+[2021-03-31 05:51:25.853 KST][172.17.12.93(57952)][condurealdb][condu_real][PostgreSQL JDBC Driver][1538][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 05:52:37.676 KST][172.17.12.93(57944)][condurealdb][condu_real][PostgreSQL JDBC Driver][29815][00000]LOG:  process 29815 still waiting for ShareLock on transaction 261555422 after 1000.053 ms
+[2021-03-31 05:52:37.676 KST][172.17.12.93(57944)][condurealdb][condu_real][PostgreSQL JDBC Driver][29815][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815.
+[2021-03-31 05:52:37.676 KST][172.17.12.93(57944)][condurealdb][condu_real][PostgreSQL JDBC Driver][29815][00000]CONTEXT:  while updating tuple (380,16) in relation "colabo_user_ledg"
+[2021-03-31 05:52:37.676 KST][172.17.12.93(57944)][condurealdb][condu_real][PostgreSQL JDBC Driver][29815][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 05:54:07.276 KST][172.17.12.93(58074)][condurealdb][condu_real][PostgreSQL JDBC Driver][2972][00000]LOG:  process 2972 still waiting for ShareLock on transaction 261555422 after 1000.049 ms
+[2021-03-31 05:54:07.276 KST][172.17.12.93(58074)][condurealdb][condu_real][PostgreSQL JDBC Driver][2972][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972.
+[2021-03-31 05:54:07.276 KST][172.17.12.93(58074)][condurealdb][condu_real][PostgreSQL JDBC Driver][2972][00000]CONTEXT:  while updating tuple (515,22) in relation "user_prfl"
+[2021-03-31 05:54:07.276 KST][172.17.12.93(58074)][condurealdb][condu_real][PostgreSQL JDBC Driver][2972][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:54:09.685 KST][172.17.12.93(58010)][condurealdb][condu_real][PostgreSQL JDBC Driver][14127][00000]LOG:  process 14127 still waiting for ExclusiveLock on tuple (515,22) of relation 17243 of database 16389 after 1000.048 ms
+[2021-03-31 05:54:09.685 KST][172.17.12.93(58010)][condurealdb][condu_real][PostgreSQL JDBC Driver][14127][00000]DETAIL:  Process holding the lock: 2972. Wait queue: 14127.
+[2021-03-31 05:54:09.685 KST][172.17.12.93(58010)][condurealdb][condu_real][PostgreSQL JDBC Driver][14127][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:56:07.778 KST][172.17.12.94(40510)][condurealdb][condu_real][PostgreSQL JDBC Driver][11898][00000]LOG:  process 11898 still waiting for ExclusiveLock on tuple (515,22) of relation 17243 of database 16389 after 1000.048 ms
+[2021-03-31 05:56:07.778 KST][172.17.12.94(40510)][condurealdb][condu_real][PostgreSQL JDBC Driver][11898][00000]DETAIL:  Process holding the lock: 2972. Wait queue: 14127, 11898.
+[2021-03-31 05:56:07.778 KST][172.17.12.94(40510)][condurealdb][condu_real][PostgreSQL JDBC Driver][11898][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 05:56:10.187 KST][172.17.12.94(51008)][condurealdb][condu_real][PostgreSQL JDBC Driver][1537][00000]LOG:  process 1537 still waiting for ExclusiveLock on tuple (515,22) of relation 17243 of database 16389 after 1000.062 ms
+[2021-03-31 05:56:10.187 KST][172.17.12.94(51008)][condurealdb][condu_real][PostgreSQL JDBC Driver][1537][00000]DETAIL:  Process holding the lock: 2972. Wait queue: 14127, 11898, 1537.
+[2021-03-31 05:56:10.187 KST][172.17.12.94(51008)][condurealdb][condu_real][PostgreSQL JDBC Driver][1537][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:01:31.995 KST][172.17.12.93(58086)][condurealdb][condu_real][PostgreSQL JDBC Driver][6477][00000]LOG:  process 6477 still waiting for ShareLock on transaction 261555422 after 1000.066 ms
+[2021-03-31 06:01:31.995 KST][172.17.12.93(58086)][condurealdb][condu_real][PostgreSQL JDBC Driver][6477][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477.
+[2021-03-31 06:01:31.995 KST][172.17.12.93(58086)][condurealdb][condu_real][PostgreSQL JDBC Driver][6477][00000]CONTEXT:  while updating tuple (3545,2) in relation "colabo_user_ledg"
+[2021-03-31 06:01:31.995 KST][172.17.12.93(58086)][condurealdb][condu_real][PostgreSQL JDBC Driver][6477][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:08:00.284 KST][172.17.12.93(58188)][condurealdb][condu_real][PostgreSQL JDBC Driver][21683][00000]LOG:  process 21683 still waiting for ShareLock on transaction 261555422 after 1000.066 ms
+[2021-03-31 06:08:00.284 KST][172.17.12.93(58188)][condurealdb][condu_real][PostgreSQL JDBC Driver][21683][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683.
+[2021-03-31 06:08:00.284 KST][172.17.12.93(58188)][condurealdb][condu_real][PostgreSQL JDBC Driver][21683][00000]CONTEXT:  while updating tuple (1236,22) in relation "user_prfl"
+[2021-03-31 06:08:00.284 KST][172.17.12.93(58188)][condurealdb][condu_real][PostgreSQL JDBC Driver][21683][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:10:00.787 KST][172.17.12.94(35590)][condurealdb][condu_real][PostgreSQL JDBC Driver][26217][00000]LOG:  process 26217 still waiting for ExclusiveLock on tuple (1236,22) of relation 17243 of database 16389 after 1000.053 ms
+[2021-03-31 06:10:00.787 KST][172.17.12.94(35590)][condurealdb][condu_real][PostgreSQL JDBC Driver][26217][00000]DETAIL:  Process holding the lock: 21683. Wait queue: 26217.
+[2021-03-31 06:10:00.787 KST][172.17.12.94(35590)][condurealdb][condu_real][PostgreSQL JDBC Driver][26217][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:10:45.118 KST][172.17.12.93(58190)][condurealdb][condu_real][PostgreSQL JDBC Driver][21684][00000]LOG:  process 21684 still waiting for ShareLock on transaction 261555422 after 1000.057 ms
+[2021-03-31 06:10:45.118 KST][172.17.12.93(58190)][condurealdb][condu_real][PostgreSQL JDBC Driver][21684][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684.
+[2021-03-31 06:10:45.118 KST][172.17.12.93(58190)][condurealdb][condu_real][PostgreSQL JDBC Driver][21684][00000]CONTEXT:  while updating tuple (517,1) in relation "colabo_user_ledg"
+[2021-03-31 06:10:45.118 KST][172.17.12.93(58190)][condurealdb][condu_real][PostgreSQL JDBC Driver][21684][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:11:44.748 KST][172.17.12.94(38096)][condurealdb][condu_real][PostgreSQL JDBC Driver][11136][00000]LOG:  process 11136 still waiting for ShareLock on transaction 261555422 after 1000.069 ms
+[2021-03-31 06:11:44.748 KST][172.17.12.94(38096)][condurealdb][condu_real][PostgreSQL JDBC Driver][11136][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136.
+[2021-03-31 06:11:44.748 KST][172.17.12.94(38096)][condurealdb][condu_real][PostgreSQL JDBC Driver][11136][00000]CONTEXT:  while updating tuple (517,6) in relation "colabo_user_ledg"
+[2021-03-31 06:11:44.748 KST][172.17.12.94(38096)][condurealdb][condu_real][PostgreSQL JDBC Driver][11136][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:13:53.930 KST][172.17.12.93(58412)][condurealdb][condu_real][PostgreSQL JDBC Driver][7197][00000]LOG:  process 7197 still waiting for ShareLock on transaction 261555422 after 1000.059 ms
+[2021-03-31 06:13:53.930 KST][172.17.12.93(58412)][condurealdb][condu_real][PostgreSQL JDBC Driver][7197][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197.
+[2021-03-31 06:13:53.930 KST][172.17.12.93(58412)][condurealdb][condu_real][PostgreSQL JDBC Driver][7197][00000]CONTEXT:  while updating tuple (769,23) in relation "user_prfl"
+[2021-03-31 06:13:53.930 KST][172.17.12.93(58412)][condurealdb][condu_real][PostgreSQL JDBC Driver][7197][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:14:32.037 KST][172.17.12.93(58414)][condurealdb][condu_real][PostgreSQL JDBC Driver][7198][00000]LOG:  process 7198 still waiting for ExclusiveLock on tuple (769,23) of relation 17243 of database 16389 after 1000.632 ms
+[2021-03-31 06:14:32.037 KST][172.17.12.93(58414)][condurealdb][condu_real][PostgreSQL JDBC Driver][7198][00000]DETAIL:  Process holding the lock: 7197. Wait queue: 7198.
+[2021-03-31 06:14:32.037 KST][172.17.12.93(58414)][condurealdb][condu_real][PostgreSQL JDBC Driver][7198][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:15:45.458 KST][172.17.12.93(58462)][condurealdb][condu_real][PostgreSQL JDBC Driver][15910][00000]LOG:  process 15910 still waiting for ShareLock on transaction 261555422 after 1000.054 ms
+[2021-03-31 06:15:45.458 KST][172.17.12.93(58462)][condurealdb][condu_real][PostgreSQL JDBC Driver][15910][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910.
+[2021-03-31 06:15:45.458 KST][172.17.12.93(58462)][condurealdb][condu_real][PostgreSQL JDBC Driver][15910][00000]CONTEXT:  while updating tuple (390,7) in relation "colabo_user_ledg"
+[2021-03-31 06:15:45.458 KST][172.17.12.93(58462)][condurealdb][condu_real][PostgreSQL JDBC Driver][15910][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:15:54.432 KST][172.17.12.94(34004)][condurealdb][condu_real][PostgreSQL JDBC Driver][25288][00000]LOG:  process 25288 still waiting for ExclusiveLock on tuple (769,23) of relation 17243 of database 16389 after 1000.053 ms
+[2021-03-31 06:15:54.432 KST][172.17.12.94(34004)][condurealdb][condu_real][PostgreSQL JDBC Driver][25288][00000]DETAIL:  Process holding the lock: 7197. Wait queue: 7198, 25288.
+[2021-03-31 06:15:54.432 KST][172.17.12.94(34004)][condurealdb][condu_real][PostgreSQL JDBC Driver][25288][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:16:32.542 KST][172.17.12.94(51006)][condurealdb][condu_real][PostgreSQL JDBC Driver][1536][00000]LOG:  process 1536 still waiting for ExclusiveLock on tuple (769,23) of relation 17243 of database 16389 after 1000.063 ms
+[2021-03-31 06:16:32.542 KST][172.17.12.94(51006)][condurealdb][condu_real][PostgreSQL JDBC Driver][1536][00000]DETAIL:  Process holding the lock: 7197. Wait queue: 7198, 25288, 1536.
+[2021-03-31 06:16:32.542 KST][172.17.12.94(51006)][condurealdb][condu_real][PostgreSQL JDBC Driver][1536][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:20:30.339 KST][172.17.12.93(58468)][condurealdb][condu_real][PostgreSQL JDBC Driver][17394][00000]LOG:  process 17394 still waiting for ShareLock on transaction 261555422 after 1000.055 ms
+[2021-03-31 06:20:30.339 KST][172.17.12.93(58468)][condurealdb][condu_real][PostgreSQL JDBC Driver][17394][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394.
+[2021-03-31 06:20:30.339 KST][172.17.12.93(58468)][condurealdb][condu_real][PostgreSQL JDBC Driver][17394][00000]CONTEXT:  while updating tuple (425,24) in relation "user_prfl"
+[2021-03-31 06:20:30.339 KST][172.17.12.93(58468)][condurealdb][condu_real][PostgreSQL JDBC Driver][17394][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:20:33.315 KST][172.17.12.93(58476)][condurealdb][condu_real][PostgreSQL JDBC Driver][17398][00000]LOG:  process 17398 still waiting for ExclusiveLock on tuple (425,24) of relation 17243 of database 16389 after 1000.061 ms
+[2021-03-31 06:20:33.315 KST][172.17.12.93(58476)][condurealdb][condu_real][PostgreSQL JDBC Driver][17398][00000]DETAIL:  Process holding the lock: 17394. Wait queue: 17398.
+[2021-03-31 06:20:33.315 KST][172.17.12.93(58476)][condurealdb][condu_real][PostgreSQL JDBC Driver][17398][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:22:28.112 KST][172.17.12.94(52426)][condurealdb][condu_real][PostgreSQL JDBC Driver][20270][00000]LOG:  process 20270 still waiting for ShareLock on transaction 261555422 after 1000.230 ms
+[2021-03-31 06:22:28.112 KST][172.17.12.94(52426)][condurealdb][condu_real][PostgreSQL JDBC Driver][20270][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270.
+[2021-03-31 06:22:28.112 KST][172.17.12.94(52426)][condurealdb][condu_real][PostgreSQL JDBC Driver][20270][00000]CONTEXT:  while updating tuple (411,1) in relation "colabo_user_ledg"
+[2021-03-31 06:22:28.112 KST][172.17.12.94(52426)][condurealdb][condu_real][PostgreSQL JDBC Driver][20270][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:22:30.842 KST][172.17.12.94(32786)][condurealdb][condu_real][PostgreSQL JDBC Driver][25306][00000]LOG:  process 25306 still waiting for ExclusiveLock on tuple (425,24) of relation 17243 of database 16389 after 1000.055 ms
+[2021-03-31 06:22:30.842 KST][172.17.12.94(32786)][condurealdb][condu_real][PostgreSQL JDBC Driver][25306][00000]DETAIL:  Process holding the lock: 17394. Wait queue: 17398, 25306.
+[2021-03-31 06:22:30.842 KST][172.17.12.94(32786)][condurealdb][condu_real][PostgreSQL JDBC Driver][25306][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:22:33.819 KST][172.17.12.94(38752)][condurealdb][condu_real][PostgreSQL JDBC Driver][12232][00000]LOG:  process 12232 still waiting for ExclusiveLock on tuple (425,24) of relation 17243 of database 16389 after 1000.070 ms
+[2021-03-31 06:22:33.819 KST][172.17.12.94(38752)][condurealdb][condu_real][PostgreSQL JDBC Driver][12232][00000]DETAIL:  Process holding the lock: 17394. Wait queue: 17398, 25306, 12232.
+[2021-03-31 06:22:33.819 KST][172.17.12.94(38752)][condurealdb][condu_real][PostgreSQL JDBC Driver][12232][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:25:42.625 KST][172.17.12.93(58484)][condurealdb][condu_real][PostgreSQL JDBC Driver][17402][00000]LOG:  process 17402 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.050 ms
+[2021-03-31 06:25:42.625 KST][172.17.12.93(58484)][condurealdb][condu_real][PostgreSQL JDBC Driver][17402][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402.
+[2021-03-31 06:25:42.625 KST][172.17.12.93(58484)][condurealdb][condu_real][PostgreSQL JDBC Driver][17402][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:25:43.663 KST][172.17.12.94(44948)][condurealdb][condu_real][PostgreSQL JDBC Driver][32404][00000]LOG:  process 32404 still waiting for ShareLock on transaction 261555422 after 1000.056 ms
+[2021-03-31 06:25:43.663 KST][172.17.12.94(44948)][condurealdb][condu_real][PostgreSQL JDBC Driver][32404][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404.
+[2021-03-31 06:25:43.663 KST][172.17.12.94(44948)][condurealdb][condu_real][PostgreSQL JDBC Driver][32404][00000]CONTEXT:  while updating tuple (4207,9) in relation "colabo_user_ledg"
+[2021-03-31 06:25:43.663 KST][172.17.12.94(44948)][condurealdb][condu_real][PostgreSQL JDBC Driver][32404][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:25:48.169 KST][172.17.12.93(58470)][condurealdb][condu_real][PostgreSQL JDBC Driver][17395][00000]LOG:  process 17395 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.081 ms
+[2021-03-31 06:25:48.169 KST][172.17.12.93(58470)][condurealdb][condu_real][PostgreSQL JDBC Driver][17395][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402, 17395, 17397.
+[2021-03-31 06:25:48.169 KST][172.17.12.93(58470)][condurealdb][condu_real][PostgreSQL JDBC Driver][17395][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:25:49.136 KST][172.17.12.93(58474)][condurealdb][condu_real][PostgreSQL JDBC Driver][17397][00000]LOG:  process 17397 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.067 ms
+[2021-03-31 06:25:49.136 KST][172.17.12.93(58474)][condurealdb][condu_real][PostgreSQL JDBC Driver][17397][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402, 17395, 17397.
+[2021-03-31 06:25:49.136 KST][172.17.12.93(58474)][condurealdb][condu_real][PostgreSQL JDBC Driver][17397][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:01.676 KST][172.17.12.93(58480)][condurealdb][condu_real][PostgreSQL JDBC Driver][17400][00000]LOG:  process 17400 still waiting for ShareLock on transaction 261555422 after 1000.072 ms
+[2021-03-31 06:27:01.676 KST][172.17.12.93(58480)][condurealdb][condu_real][PostgreSQL JDBC Driver][17400][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400.
+[2021-03-31 06:27:01.676 KST][172.17.12.93(58480)][condurealdb][condu_real][PostgreSQL JDBC Driver][17400][00000]CONTEXT:  while updating tuple (531,24) in relation "user_prfl"
+[2021-03-31 06:27:01.676 KST][172.17.12.93(58480)][condurealdb][condu_real][PostgreSQL JDBC Driver][17400][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:05.906 KST][172.17.12.93(58082)][condurealdb][condu_real][PostgreSQL JDBC Driver][6253][00000]LOG:  process 6253 still waiting for ExclusiveLock on tuple (531,24) of relation 17243 of database 16389 after 1000.075 ms
+[2021-03-31 06:27:05.906 KST][172.17.12.93(58082)][condurealdb][condu_real][PostgreSQL JDBC Driver][6253][00000]DETAIL:  Process holding the lock: 17400. Wait queue: 6253.
+[2021-03-31 06:27:05.906 KST][172.17.12.93(58082)][condurealdb][condu_real][PostgreSQL JDBC Driver][6253][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:15.406 KST][172.17.12.94(44944)][condurealdb][condu_real][PostgreSQL JDBC Driver][32402][00000]LOG:  process 32402 still waiting for ShareLock on transaction 261555422 after 1000.088 ms
+[2021-03-31 06:27:15.406 KST][172.17.12.94(44944)][condurealdb][condu_real][PostgreSQL JDBC Driver][32402][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402.
+[2021-03-31 06:27:15.406 KST][172.17.12.94(44944)][condurealdb][condu_real][PostgreSQL JDBC Driver][32402][00000]CONTEXT:  while updating tuple (1242,16) in relation "user_prfl"
+[2021-03-31 06:27:15.406 KST][172.17.12.94(44944)][condurealdb][condu_real][PostgreSQL JDBC Driver][32402][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:25.426 KST][172.17.12.93(58416)][condurealdb][condu_real][PostgreSQL JDBC Driver][7199][00000]LOG:  process 7199 still waiting for ExclusiveLock on tuple (515,22) of relation 17243 of database 16389 after 1000.073 ms
+[2021-03-31 06:27:25.426 KST][172.17.12.93(58416)][condurealdb][condu_real][PostgreSQL JDBC Driver][7199][00000]DETAIL:  Process holding the lock: 2972. Wait queue: 14127, 11898, 1537, 7199.
+[2021-03-31 06:27:25.426 KST][172.17.12.93(58416)][condurealdb][condu_real][PostgreSQL JDBC Driver][7199][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:43.132 KST][172.17.12.94(44950)][condurealdb][condu_real][PostgreSQL JDBC Driver][32405][00000]LOG:  process 32405 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.058 ms
+[2021-03-31 06:27:43.132 KST][172.17.12.94(44950)][condurealdb][condu_real][PostgreSQL JDBC Driver][32405][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402, 17395, 17397, 32405.
+[2021-03-31 06:27:43.132 KST][172.17.12.94(44950)][condurealdb][condu_real][PostgreSQL JDBC Driver][32405][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:48.355 KST][172.17.12.94(44946)][condurealdb][condu_real][PostgreSQL JDBC Driver][32403][00000]LOG:  process 32403 still waiting for ExclusiveLock on tuple (1242,16) of relation 17243 of database 16389 after 1000.056 ms
+[2021-03-31 06:27:48.355 KST][172.17.12.94(44946)][condurealdb][condu_real][PostgreSQL JDBC Driver][32403][00000]DETAIL:  Process holding the lock: 32402. Wait queue: 32403.
+[2021-03-31 06:27:48.355 KST][172.17.12.94(44946)][condurealdb][condu_real][PostgreSQL JDBC Driver][32403][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:48.677 KST][172.17.12.94(43581)][condurealdb][condu_real][PostgreSQL JDBC Driver][31574][00000]LOG:  process 31574 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.066 ms
+[2021-03-31 06:27:48.677 KST][172.17.12.94(43581)][condurealdb][condu_real][PostgreSQL JDBC Driver][31574][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402, 17395, 17397, 32405, 31574, 32406.
+[2021-03-31 06:27:48.677 KST][172.17.12.94(43581)][condurealdb][condu_real][PostgreSQL JDBC Driver][31574][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:49.640 KST][172.17.12.94(44952)][condurealdb][condu_real][PostgreSQL JDBC Driver][32406][00000]LOG:  process 32406 still waiting for ExclusiveLock on tuple (1245,21) of relation 17243 of database 16389 after 1000.060 ms
+[2021-03-31 06:27:49.640 KST][172.17.12.94(44952)][condurealdb][condu_real][PostgreSQL JDBC Driver][32406][00000]DETAIL:  Process holding the lock: 1108. Wait queue: 27385, 17402, 17395, 17397, 32405, 31574, 32406.
+[2021-03-31 06:27:49.640 KST][172.17.12.94(44952)][condurealdb][condu_real][PostgreSQL JDBC Driver][32406][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:27:55.626 KST][172.17.12.93(58616)][condurealdb][condu_real][PostgreSQL JDBC Driver][9867][00000]LOG:  process 9867 still waiting for ShareLock on transaction 261555422 after 1000.063 ms
+[2021-03-31 06:27:55.626 KST][172.17.12.93(58616)][condurealdb][condu_real][PostgreSQL JDBC Driver][9867][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402, 9867.
+[2021-03-31 06:27:55.626 KST][172.17.12.93(58616)][condurealdb][condu_real][PostgreSQL JDBC Driver][9867][00000]CONTEXT:  while updating tuple (408,5) in relation "colabo_user_ledg"
+[2021-03-31 06:27:55.626 KST][172.17.12.93(58616)][condurealdb][condu_real][PostgreSQL JDBC Driver][9867][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:28:50.413 KST][172.17.12.94(44954)][condurealdb][condu_real][PostgreSQL JDBC Driver][32407][00000]LOG:  process 32407 still waiting for ExclusiveLock on tuple (1233,4) of relation 17243 of database 16389 after 1000.060 ms
+[2021-03-31 06:28:50.413 KST][172.17.12.94(44954)][condurealdb][condu_real][PostgreSQL JDBC Driver][32407][00000]DETAIL:  Process holding the lock: 10730. Wait queue: 17009, 22067, 24723, 32407.
+[2021-03-31 06:28:50.413 KST][172.17.12.94(44954)][condurealdb][condu_real][PostgreSQL JDBC Driver][32407][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:29:02.177 KST][172.17.12.94(43238)][condurealdb][condu_real][PostgreSQL JDBC Driver][31388][00000]LOG:  process 31388 still waiting for ExclusiveLock on tuple (531,24) of relation 17243 of database 16389 after 1000.061 ms
+[2021-03-31 06:29:02.177 KST][172.17.12.94(43238)][condurealdb][condu_real][PostgreSQL JDBC Driver][31388][00000]DETAIL:  Process holding the lock: 17400. Wait queue: 6253, 31388.
+[2021-03-31 06:29:02.177 KST][172.17.12.94(43238)][condurealdb][condu_real][PostgreSQL JDBC Driver][31388][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:29:06.416 KST][172.17.12.94(37366)][condurealdb][condu_real][PostgreSQL JDBC Driver][12153][00000]LOG:  process 12153 still waiting for ExclusiveLock on tuple (531,24) of relation 17243 of database 16389 after 1000.066 ms
+[2021-03-31 06:29:06.416 KST][172.17.12.94(37366)][condurealdb][condu_real][PostgreSQL JDBC Driver][12153][00000]DETAIL:  Process holding the lock: 17400. Wait queue: 6253, 31388, 12153.
+[2021-03-31 06:29:06.416 KST][172.17.12.94(37366)][condurealdb][condu_real][PostgreSQL JDBC Driver][12153][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:29:15.909 KST][172.17.12.93(58410)][condurealdb][condu_real][PostgreSQL JDBC Driver][7196][00000]LOG:  process 7196 still waiting for ExclusiveLock on tuple (1242,16) of relation 17243 of database 16389 after 1000.056 ms
+[2021-03-31 06:29:15.909 KST][172.17.12.93(58410)][condurealdb][condu_real][PostgreSQL JDBC Driver][7196][00000]DETAIL:  Process holding the lock: 32402. Wait queue: 32403, 7196.
+[2021-03-31 06:29:15.909 KST][172.17.12.93(58410)][condurealdb][condu_real][PostgreSQL JDBC Driver][7196][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:29:25.932 KST][172.17.12.94(37902)][condurealdb][condu_real][PostgreSQL JDBC Driver][12458][00000]LOG:  process 12458 still waiting for ExclusiveLock on tuple (515,22) of relation 17243 of database 16389 after 1000.062 ms
+[2021-03-31 06:29:25.932 KST][172.17.12.94(37902)][condurealdb][condu_real][PostgreSQL JDBC Driver][12458][00000]DETAIL:  Process holding the lock: 2972. Wait queue: 14127, 11898, 1537, 7199, 12458.
+[2021-03-31 06:29:25.932 KST][172.17.12.94(37902)][condurealdb][condu_real][PostgreSQL JDBC Driver][12458][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:29:48.860 KST][172.17.12.93(58648)][condurealdb][condu_real][PostgreSQL JDBC Driver][13622][00000]LOG:  process 13622 still waiting for ExclusiveLock on tuple (1242,16) of relation 17243 of database 16389 after 1000.056 ms
+[2021-03-31 06:29:48.860 KST][172.17.12.93(58648)][condurealdb][condu_real][PostgreSQL JDBC Driver][13622][00000]DETAIL:  Process holding the lock: 32402. Wait queue: 32403, 7196, 13622.
+[2021-03-31 06:29:48.860 KST][172.17.12.93(58648)][condurealdb][condu_real][PostgreSQL JDBC Driver][13622][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:30:50.915 KST][172.17.12.94(38784)][condurealdb][condu_real][PostgreSQL JDBC Driver][12969][00000]LOG:  process 12969 still waiting for ExclusiveLock on tuple (1233,4) of relation 17243 of database 16389 after 1000.059 ms
+[2021-03-31 06:30:50.915 KST][172.17.12.94(38784)][condurealdb][condu_real][PostgreSQL JDBC Driver][12969][00000]DETAIL:  Process holding the lock: 10730. Wait queue: 17009, 22067, 24723, 32407, 12969.
+[2021-03-31 06:30:50.915 KST][172.17.12.94(38784)][condurealdb][condu_real][PostgreSQL JDBC Driver][12969][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U004) */  user_prfl
+	set stts = 'Y'
+
+	 , status =  $1
+	where user_id = $2
+	and stts = 'Y'
+[2021-03-31 06:30:51.582 KST][172.17.12.94(40490)][condurealdb][condu_real][PostgreSQL JDBC Driver][13939][00000]LOG:  process 13939 still waiting for ShareLock on transaction 261555422 after 1000.057 ms
+[2021-03-31 06:30:51.582 KST][172.17.12.94(40490)][condurealdb][condu_real][PostgreSQL JDBC Driver][13939][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402, 9867, 13939.
+[2021-03-31 06:30:51.582 KST][172.17.12.94(40490)][condurealdb][condu_real][PostgreSQL JDBC Driver][13939][00000]CONTEXT:  while updating tuple (1124,18) in relation "user_prfl"
+[2021-03-31 06:30:51.582 KST][172.17.12.94(40490)][condurealdb][condu_real][PostgreSQL JDBC Driver][13939][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:32:50.034 KST][172.17.12.94(45874)][condurealdb][condu_real][PostgreSQL JDBC Driver][17136][00000]LOG:  process 17136 still waiting for ShareLock on transaction 261555422 after 1000.062 ms
+[2021-03-31 06:32:50.034 KST][172.17.12.94(45874)][condurealdb][condu_real][PostgreSQL JDBC Driver][17136][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402, 9867, 13939, 17136.
+[2021-03-31 06:32:50.034 KST][172.17.12.94(45874)][condurealdb][condu_real][PostgreSQL JDBC Driver][17136][00000]CONTEXT:  while updating tuple (497,4) in relation "colabo_user_ledg"
+[2021-03-31 06:32:50.034 KST][172.17.12.94(45874)][condurealdb][condu_real][PostgreSQL JDBC Driver][17136][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:32:52.078 KST][172.17.12.93(58646)][condurealdb][condu_real][PostgreSQL JDBC Driver][13303][00000]LOG:  process 13303 still waiting for ExclusiveLock on tuple (1124,18) of relation 17243 of database 16389 after 1000.062 ms
+[2021-03-31 06:32:52.078 KST][172.17.12.93(58646)][condurealdb][condu_real][PostgreSQL JDBC Driver][13303][00000]DETAIL:  Process holding the lock: 13939. Wait queue: 13303.
+[2021-03-31 06:32:52.078 KST][172.17.12.93(58646)][condurealdb][condu_real][PostgreSQL JDBC Driver][13303][00000]STATEMENT:  update /* MAP_ID(USER_PRFL_U13) */  user_prfl
+	set pwd_err_cnt = $1
+	, pwd_err_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	where user_id = $2
+[2021-03-31 06:34:27.380 KST][172.17.12.94(45940)][condurealdb][condu_real][PostgreSQL JDBC Driver][17172][00000]LOG:  process 17172 still waiting for ShareLock on transaction 261555422 after 1000.061 ms
+[2021-03-31 06:34:27.380 KST][172.17.12.94(45940)][condurealdb][condu_real][PostgreSQL JDBC Driver][17172][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402, 9867, 13939, 17136, 17172.
+[2021-03-31 06:34:27.380 KST][172.17.12.94(45940)][condurealdb][condu_real][PostgreSQL JDBC Driver][17172][00000]CONTEXT:  while updating tuple (4195,12) in relation "colabo_user_ledg"
+[2021-03-31 06:34:27.380 KST][172.17.12.94(45940)][condurealdb][condu_real][PostgreSQL JDBC Driver][17172][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
+[2021-03-31 06:35:26.856 KST][172.17.12.94(56690)][condurealdb][condu_real][PostgreSQL JDBC Driver][23444][00000]LOG:  process 23444 still waiting for ShareLock on transaction 261555422 after 1000.072 ms
+[2021-03-31 06:35:26.856 KST][172.17.12.94(56690)][condurealdb][condu_real][PostgreSQL JDBC Driver][23444][00000]DETAIL:  Process holding the lock: 21063. Wait queue: 10733, 10729, 19946, 18794, 1108, 23308, 5870, 10730, 1538, 29815, 2972, 6477, 21683, 21684, 11136, 7197, 15910, 17394, 20270, 32404, 17400, 32402, 9867, 13939, 17136, 17172, 23444.
+[2021-03-31 06:35:26.856 KST][172.17.12.94(56690)][condurealdb][condu_real][PostgreSQL JDBC Driver][23444][00000]CONTEXT:  while updating tuple (471,10) in relation "colabo_user_ledg"
+[2021-03-31 06:35:26.856 KST][172.17.12.94(56690)][condurealdb][condu_real][PostgreSQL JDBC Driver][23444][00000]STATEMENT:  update /* MAP_ID(COLABO_USER_LEDG_U011) */  colabo_user_ledg
+	set
+	m_login_dttm = TO_CHAR(NOW(), 'YYYYMMDDHH24MISS')
+	, PHONE_DSNC = $1
+	, PHONE_VERSION = $2
+	, info = $3
+	where
+	ptl_id = $4
+	and chnl_id = $5
+	and use_intt_id = $6
+	and user_id = $7
