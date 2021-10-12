@@ -4,9 +4,11 @@ const saltRounds = 10;
 
 // Define Schemes
 const signUpSchema = new mongoose.Schema({
-        email:      { type: String, required: true, unique: true },
-        passwd:     { type: String, required: true },
-        name:       { type: String },
+        userId:       { type: String, unique: true },
+        googleId:       { type: String, unique: true },
+        appleId:       { type: String, unique: true },
+        passwd:     { type: String },
+        nickName:       { type: String },
         // login_dttm: { type: Date, default: true },
         // prfl_img:   { type: String },
         // duid:       { type: String, default: false },
@@ -19,6 +21,7 @@ const signUpSchema = new mongoose.Schema({
 
 signUpSchema.pre("save", function (next) {
     let user = this;
+    console.log('save',user)
 
     if (user.isModified("passwd")) {
         bcrypt.genSalt(saltRounds, function (err, salt) {
@@ -40,14 +43,14 @@ signUpSchema.methods.comparePassword = function (plainPassword) {
         .then((isMatch) => isMatch)
         .catch((err) => err);
 };
-//
-// signUpSchema.methods.generateToken = function () {
-//     const token = jwt.sign(this._id.toHexString(), "secretToken");
-//     this.token = token;
-//     return this.save()
-//         .then((user) => user)
-//         .catch((err) => err);
-// };
+
+signUpSchema.methods.generateToken = function () {
+    const token = jwt.sign(this._id.toHexString(), "secretToken");
+    this.token = token;
+    return this.save()
+        .then((user) => user)
+        .catch((err) => err);
+};
 
 
 const User = mongoose.model("User", signUpSchema);
