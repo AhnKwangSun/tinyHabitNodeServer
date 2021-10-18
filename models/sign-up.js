@@ -4,9 +4,9 @@ const saltRounds = 10;
 
 // Define Schemes
 const signUpSchema = new mongoose.Schema({
-        userId:       { type: String, unique: true },
-        googleId:       { type: String, unique: true },
-        appleId:       { type: String, unique: true },
+        userId:       { type: String },
+        googleId:       { type: String},
+        appleId:       { type: String },
         passwd:     { type: String },
         nickName:       { type: String },
         // login_dttm: { type: Date, default: true },
