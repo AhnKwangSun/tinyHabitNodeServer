@@ -46,14 +46,14 @@ function signInCheck(data, type, callback) {
         case 'apple':
             userData['appleId'] = data.sub;
             searchUserId(callback, userData, 'appleId', 'thirdParty');
-            return value;
+            break;
         case 'google':
             userData['googleId'] = data.sub;
             searchUserId(callback, userData, 'googleId', 'thirdParty');
-            return value;
+            break;
         default:
             searchUserId(callback, data, 'userId');
-            return value;
+            break;
     }
 }
 
@@ -71,7 +71,6 @@ function searchUserId(callback, data, searchColumn, type) {
     User.findOne(userFilter, (err, user) => {
         console.log('gdgdgd', userFilter, err, user);
         if (!user) {
-            console.log("1111",user);
             if (type) {
                 const user = new User(data);
 
