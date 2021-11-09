@@ -92,6 +92,7 @@ function searchUserId(callback, data, searchColumn, type) {
             if (!type) {
                 user
                     .comparePassword(req.body.passwd)
+                    .generateToken()
                     .then((isMatch) => {
                         if (!isMatch) {
                             return ({
@@ -108,10 +109,14 @@ function searchUserId(callback, data, searchColumn, type) {
                 //비밀번호가 일치하면 토큰을 생성한다
                 //해야될것: jwt 토큰 생성하는 메소드 작성
             } else {
-                responseValue['loginSuccess'] = 'true';
-                responseValue['token'] = 'jwtToken';
-                console.log('wawa2646',responseValue)
-                return callback(responseValue);
+
+                user.generateToken()
+                    .then((user) => {
+                        responseValue['loginSuccess'] = 'true';
+                        responseValue['token'] = user.token;
+                        console.log('wawa2646',responseValue)
+                        return callback(responseValue);
+                    })
             }
         }
     });
