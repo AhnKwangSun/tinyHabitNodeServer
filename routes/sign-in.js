@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const {User} = require("../models/sign-up");
 const url = require("url");
+const jwt = require("jsonwebtoken");
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -21,17 +22,16 @@ router.post("/apple", (req, res) =>{
     data = JSON.parse(Buffer.from(data.split('.')[1], "base64").toString('utf8'));
 
     signInCheck(data, 'apple', (responseValue) => {
-        res.status(200).json(responseValue);
+        res.status(parseInt(responseValue.status)).json(responseValue);
     })
 })
 
 router.post("/google", (req, res) => {
-    console.log("original", req.body);
     let data = req.body;
     data = data.token;
     data = JSON.parse(Buffer.from(data.split('.')[1], "base64").toString('utf8'));
     signInCheck(data, 'google', (responseValue) => {
-        res.status(200).json(responseValue);
+        res.status(parseInt(responseValue.status)).json(responseValue);
     })
 })
 router.post("/", (req, res) =>{
@@ -45,11 +45,11 @@ function signInCheck(data, type, callback) {
     switch (type) {
         case 'apple':
             userData['appleId'] = data.sub;
-            searchUserId(callback, userData, 'appleId', 'thirdParty');
+            searchUserId(callback, userData, 'apple');
             break;
         case 'google':
             userData['googleId'] = data.sub;
-            searchUserId(callback, userData, 'googleId', 'thirdParty');
+            searchUserId(callback, userData, 'google',);
             break;
         default:
             searchUserId(callback, data, 'userId');
@@ -57,53 +57,61 @@ function signInCheck(data, type, callback) {
     }
 }
 
-function searchUserId(callback, data, searchColumn, type) {
+function searchUserId(callback, data, loginType) {
     let userFilter = {};
     let responseValue = {};
     let userData = {};
 
-    if (type) {
-        userFilter[searchColumn] = data.appleId;
+    if (loginType==='apple') {
+        userFilter['appleId'] = data.appleId;
+    } else if (loginType==='google') {
+        userFilter['googleId'] = data.googleId;
     } else {
-        userFilter[searchColumn] = data.userId;
+        userFilter['userId'] = data.userId;
     }
 
-    User.findOne(userFilter, (err, user) => {
-        console.log('gdgdgd', userFilter, err, user);
+    User.findOne(userFilter, (err,user) => {
         if (!user) {
-            if (type) {
+            if (loginType) {
                 const user = new User(data);
 
                 user.save((err, userInfo) => {
                     if (err) return callback(err)
-
+                    const token = jwt.sign(userInfo._id.toHexString(), "secretToken");
+                    responseValue['status'] = '200';
                     responseValue['loginSuccess'] = 'true';
-                    responseValue['token'] = 'jwtToken';
+                    responseValue['token'] = token;
+
                     return callback(responseValue);
                 });
             } else {
-                console.log("2222",user);
                 return ({
                     loginSuccess: false,
                     message: "존재하지 않는 아이디입니다.",
                 });
             }
         } else {
-            if (!type) {
+            if (!loginType) {
                 user
                     .comparePassword(req.body.passwd)
                     .generateToken()
                     .then((isMatch) => {
                         if (!isMatch) {
-                            return ({
-                                loginSuccess: false,
-                                message: "비밀번호가 일치하지 않습니다",
-                            });
+                            responseValue['status'] = '400';
+                            responseValue['loginSuccess'] = 'false';
+                            responseValue['token'] = user.token;
+
+                            return callback(responseValue);
                         }
-                        return ({
-                            loginSuccess: true,
-                            token: 'jwtToken'
-                        });
+
+
+                        user.generateToken()
+                            .then((user) => {
+                                responseValue['status'] = '200';
+                                responseValue['loginSuccess'] = 'true';
+                                responseValue['token'] = user.token;
+                                return callback(responseValue);
+                            })
                     })
                     .catch((err) => err);
                 //비밀번호가 일치하면 토큰을 생성한다
@@ -112,9 +120,9 @@ function searchUserId(callback, data, searchColumn, type) {
 
                 user.generateToken()
                     .then((user) => {
+                        responseValue['status'] = '200';
                         responseValue['loginSuccess'] = 'true';
                         responseValue['token'] = user.token;
-                        console.log('wawa2646',responseValue)
                         return callback(responseValue);
                     })
             }

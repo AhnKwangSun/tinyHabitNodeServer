@@ -46,8 +46,7 @@ signUpSchema.methods.comparePassword = function (plainPassword) {
 };
 
 signUpSchema.methods.generateToken = function () {
-    const token = jwt.sign(this._id.toHexString(), "secretToken");
-    this.token = token;
+    this.token = jwt.sign(this._id.toHexString(), "secretToken");
     return this.save()
         .then((user) => user)
         .catch((err) => err);
