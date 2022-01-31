@@ -54,7 +54,7 @@ function signInCheck(data, type, callback) {
             searchUserId(callback, userData, 'google',);
             break;
         default:
-            searchUserId(callback, data, 'userId');
+            searchUserId(callback, data);
             break;
     }
 }
@@ -95,24 +95,21 @@ function searchUserId(callback, data, loginType) {
         } else {
             if (!loginType) {
                 user
-                    .comparePassword(req.body.passwd)
-                    .generateToken()
+                    .comparePassword(data.passwd)
                     .then((isMatch) => {
                         if (!isMatch) {
-                            responseValue['status'] = '400';
+                            responseValue['status'] = '500';
                             responseValue['loginSuccess'] = 'false';
-                            responseValue['token'] = user.token;
+                            responseValue['errMsg'] = 'Passwd is wrong'
 
                             return callback(responseValue);
                         }
 
-                        user.generateToken()
-                            .then((user) => {
-                                responseValue['status'] = '200';
-                                responseValue['loginSuccess'] = 'true';
-                                responseValue['token'] = user.token;
-                                return callback(responseValue);
-                            })
+                        const token = jwt.sign(user._id.toHexString(), "secretToken");
+                        responseValue['status'] = '200';
+                        responseValue['loginSuccess'] = 'true';
+                        responseValue['token'] = token;
+                        return callback(responseValue);
                     })
                     .catch((err) => err);
                 //비밀번호가 일치하면 토큰을 생성한다
