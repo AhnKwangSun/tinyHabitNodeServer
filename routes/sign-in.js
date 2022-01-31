@@ -35,7 +35,9 @@ router.post("/google", (req, res) => {
     })
 })
 router.post("/", (req, res) =>{
-  signInCheck(req.body).then(r => console.log(value));
+  signInCheck(req.body,null,(responseValue) => {
+      res.status(parseInt(responseValue.status)).json(responseValue);
+  })
 })
 
 function signInCheck(data, type, callback) {
@@ -103,7 +105,6 @@ function searchUserId(callback, data, loginType) {
 
                             return callback(responseValue);
                         }
-
 
                         user.generateToken()
                             .then((user) => {
