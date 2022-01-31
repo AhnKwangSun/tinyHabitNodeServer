@@ -14,7 +14,6 @@ const loginSchema = new mongoose.Schema({
 let loginApi = mongoose.model('User',loginSchema);
 
 let loginUser = new loginApi({
-    userid
 })
 
 // Create Model & Export

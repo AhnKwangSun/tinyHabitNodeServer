@@ -8,7 +8,7 @@ const signUpSchema = new mongoose.Schema({
         userId:       { type: String },
         googleId:       { type: String},
         appleId:       { type: String },
-        passwd:     { type: String },
+        passwd:     { type: String, trim:true },
         nickName:       { type: String },
         // login_dttm: { type: Date, default: true },
         // prfl_img:   { type: String },
@@ -37,6 +37,10 @@ signUpSchema.pre("save", function (next) {
         next();
     }
 });
+
+signUpSchema.methods.compareUserId = function (plainUserId) {
+    return this.userId === plainUserId ? true : false;
+};
 
 signUpSchema.methods.comparePassword = function (plainPassword) {
     return bcrypt
