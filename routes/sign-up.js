@@ -39,11 +39,11 @@ router.post("/", (req, res) => {
   let userFilter = {};
   let passwdCheck = /(?=.*\d)(?=.*[a-zㄱ-ㅎ]).{8}/     //숫자 문자 포함 8글자이상
 
-  if(!lengthCheck.test(user.passwd)){
+  if(!passwdCheck.test(user.passwd)){
     responseValue['code'] = 'CS0003';
     responseValue['title'] = '회원가입 오류';
     responseValue['msg'] = '패스워드 형식 오류';
-    return res.status(200).json(responseValue);
+    return res.status(200).json(responue);
   }
 
   userFilter['userId'] = user.userId;
