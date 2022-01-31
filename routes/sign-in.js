@@ -87,10 +87,11 @@ function searchUserId(callback, data, loginType) {
                     return callback(responseValue);
                 });
             } else {
-                return ({
-                    loginSuccess: false,
-                    message: "존재하지 않는 아이디입니다.",
-                });
+                responseValue['status'] = '200';
+                responseValue['loginSuccess'] = 'false';
+                responseValue['errMsg'] = '존재하지 않는 아이디입니다.';
+
+                return callback(responseValue)
             }
         } else {
             if (!loginType) {
